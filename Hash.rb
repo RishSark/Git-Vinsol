@@ -1,4 +1,4 @@
-class Hash
+class hash_task
     attr_reader :input
     def initialize(input)
         @input = input
@@ -11,7 +11,7 @@ class Hash
 end
 input = gets.chomp()
 if input != ""
-    print( Hash.new(input).str_count)
+    print( hash_task.new(input).str_count)
 else
     print("Please provide an input")
 end
