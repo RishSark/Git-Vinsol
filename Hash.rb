@@ -10,4 +10,8 @@ class Hash
     end
 end
 input = gets.chomp()
-puts Hash.new(input).str_count
+if input != ""
+    print( Hash.new(input).str_count)
+else
+    print("Please provide an input")
+end
