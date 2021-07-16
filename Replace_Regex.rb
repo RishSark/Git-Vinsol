@@ -1,15 +1,14 @@
 class ReplaceRegex
     attr_reader :input
     def initialize(input)
-        @input = input
+      @input = input
     end
     def rep_re
-        return input.downcase.gsub(/[aeiou]/,"*")
+      print(input.downcase.gsub(/[aeiou]/,"*"))
     end
-end
-input = gets.chomp()
-if input != ""
-    print(ReplaceRegex.new(input).rep_re)
-else
-    print("Please provide an input")
-end
+  end
+  if ARGV.empty?
+    print('Please provide an input')
+  else
+    ReplaceRegex.new(ARGV[0]).rep_re
+  end

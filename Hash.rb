@@ -1,17 +1,16 @@
-class Hash
+class HashTask
     attr_reader :input
     def initialize(input)
-        @input = input
+      @input = input
     end
-    def str_count
-        letter_list = Hash.new(0)
-        input.downcase.scan(/\w/) {|letter|  letter_list[letter]= input.count(letter)}
-        return letter_list
+    def strcount
+      letter_list = Hash.new(0)
+      input.scan(/[[:alpha:]]/) { |letter| letter_list[letter] = input.count(letter) }
+      puts letter_list
     end
-end
-input = gets.chomp()
-if input != ""
-    print( Hash.new(input).str_count)
-else
-    print("Please provide an input")
-end
+  end
+  if ARGV.empty?
+    print('Please provide an input')
+  else
+    HashTask.new(ARGV[0]).strcount
+  end
